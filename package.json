@@ -1,5 +1,5 @@
 {
-  "name": "pdf-thumbnails-generator",
+  "name": "pdf-thumbnails-generator-k2",
   "version": "1.0.6",
   "description": "Library to generate thumbnails from given pdf",
   "main": "build/bundle.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lexnim/pdf-thumbnails-generator"
+    "url": "https://github.com/karpad2/pdf-thumbnails-generator"
   },
   "author": "Nimesh Sherpa <sherpanimesh@gmail.com> (https://github.com/lexnim)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lexnim/pdf-thumbnails-generator/issues"
+    "url": "https://github.com/karpad2/pdf-thumbnails-generator/issues"
   },
-  "homepage": "https://github.com/lexnim/pdf-thumbnails-generator",
+  "homepage": "https://github.com/karpad2/pdf-thumbnails-generator",
   "keywords": [
     "pdfjs",
     "es6",
@@ -32,7 +32,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
-    "@bundled-es-modules/pdfjs-dist": "^2.2.228-alpha1",
+    "@bundled-es-modules/pdfjs-dist": "2.5.207-rc1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-preset-minify": "^0.5.0",
@@ -51,5 +51,8 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/testMock.js",
       "\\.(css|less)$": "<rootDir>/scripts/testMock.js"
     }
+  },
+  "dependencies": {
+    "pdfjs-dist": "2.4.456"
   }
 }

@@ -1,6 +1,6 @@
-import pdfjsLib from "@bundled-es-modules/pdfjs-dist";
+import * as pdfjsLib from 'pdfjs-dist/build/pdf'
 pdfjsLib.GlobalWorkerOptions.workerSrc =
-  "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.worker.js";
+  `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.js`;
 
 /**
  * @param  {Object} page
@@ -37,7 +37,7 @@ const makeThumbnail = (page, size) => {
 export const generatePdfThumbnails = async (source, size) => {
   const pdfDocument = await pdfjsLib.getDocument({
     url: source,
-  });
+  }).promise;
 
   const pages = [];
   while (pages.length < pdfDocument.numPages) pages.push(pages.length + 1);
@@ -55,4 +55,14 @@ export const generatePdfThumbnails = async (source, size) => {
   );
 };
 
-export default generatePdfThumbnails;
+export const generatePdfPageNumber = async (source) => {
+  const pdfDocument = await pdfjsLib.getDocument({
+    url: source,
+  }).promise;
+
+  //const pages = [];
+ // while (pages.length < pdfDocument.numPages) pages.push(pages.length + 1);
+
+ return pdfDocument.numPages;
+};
+
